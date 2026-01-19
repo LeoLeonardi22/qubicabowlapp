@@ -1,9 +1,14 @@
-import { themes } from './themes'
-import { defaultConfig } from '@tamagui/config/v4'
-import { createTamagui } from '@tamagui/core'
-
+import { config as defaultConfig } from '@tamagui/config/v3'
+import { createTamagui } from 'tamagui'
+import { themes } from './themes' // ← IMPORTANTE: importa i temi
 
 export const config = createTamagui({
   ...defaultConfig,
-  themes,
+  themes, // ← aggiungi i tuoi temi custom
 })
+
+type OurConfig = typeof config
+
+declare module 'tamagui' {
+  interface TamaguiCustomConfig extends OurConfig {}
+}

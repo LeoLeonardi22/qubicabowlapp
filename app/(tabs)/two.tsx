@@ -1,18 +1,15 @@
-import {
-  Button,
-  TamaguiProvider,
-  Text,
-  View,
-} from "tamagui";
-import { config } from "tamagui.config";
+import { Button, Text, View } from "tamagui";
 
 export default function TabTwoScreen() {
   return (
-    <TamaguiProvider config={config} defaultTheme="dark">
-      <View flex={1} items="center" justify="center" bg="$background">
-        <Text>This is the two tab</Text>
-        <Button theme="accent">yex!!</Button>
-      </View>
-    </TamaguiProvider>
+    <View 
+      flex={1} 
+      alignItems="center"  // ← items → alignItems
+      justifyContent="center"  // ← justify → justifyContent
+      bg="$background"
+    >
+      <Text>This is the two tab</Text>
+      <Button theme="accent">yex!!</Button>
+    </View>
   );
 }

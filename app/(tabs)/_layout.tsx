@@ -1,39 +1,47 @@
 import { Link, Tabs } from "expo-router";
-import { Button, TamaguiProvider,} from "tamagui";
+import { Button, useTheme } from "tamagui";
 import { Home, AudioWaveform } from "@tamagui/lucide-icons";
-import { config } from 'tamagui.config'
 
 export default function TabLayout() {
+  const theme = useTheme();
+
   return (
-    <TamaguiProvider config={config} defaultTheme="accent">
-        <Tabs
-          screenOptions={{
-            headerShown: true,
-            tabBarActiveTintColor: "hsla(0, 70%, 53%, 1)",
-          }}
-        >
-          <Tabs.Screen
-            name="index"
-            options={{
-              title: "Tab One",
-              tabBarIcon: ({ color }) => <Home color={color} />,
-              headerRight: () => (
-                <Link href="/modal" asChild>
-                  <Button mr="$4" size="$2.5">
-                    Hello!
-                  </Button>
-                </Link>
-              ),
-            }}
-          />
-          <Tabs.Screen
-            name="two"
-            options={{
-              title: "Tab Two",
-              tabBarIcon: ({ color }) => <AudioWaveform color={color} />,
-            }}
-          />
-        </Tabs>
-    </TamaguiProvider>
+    <Tabs
+      screenOptions={{
+        headerShown: true,
+        tabBarActiveTintColor: theme.accent10?.get() ?? '#ff0000', // ← optional chaining + fallback
+        tabBarStyle: {
+          backgroundColor: theme.background?.get() ?? '#ffffff',
+          borderTopColor: theme.borderColor?.get() ?? '#cccccc',
+        },
+        headerStyle: {
+          backgroundColor: theme.background?.get() ?? '#ffffff',
+          borderBottomColor: theme.borderColor?.get() ?? '#cccccc',
+        },
+        headerTintColor: theme.color?.get() ?? '#000000',
+      }}
+    >
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Tab One",
+          tabBarIcon: ({ color }) => <Home color={color} />,
+          headerRight: () => (
+            <Link href="/modal" asChild>
+              <Button marginRight="$4" size="$2.5"> {/* ← usa marginRight invece di mr */}
+                Hello!
+              </Button>
+            </Link>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="two"
+        options={{
+          title: "Tab Two",
+          tabBarIcon: ({ color }) => <AudioWaveform color={color} />,
+        }}
+      />
+    </Tabs>
   );
 }
