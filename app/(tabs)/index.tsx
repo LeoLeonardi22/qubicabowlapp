@@ -10,8 +10,8 @@ export default function TabOneScreen() {
       gap="$4"
     >
       <Text>This is tab one</Text>
-      <Button>yex!!</Button>
-      <Card elevate size="$4" bordered>
+      <Button themeInverse>yex!!</Button>
+      <Card elevate size="$4" theme="accent">
         <Card.Header padded>
           <H2>Sony A7IV</H2>
           <Paragraph>Now available</Paragraph>
