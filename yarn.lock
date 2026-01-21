@@ -5276,7 +5276,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tamagui/linear-gradient@npm:1.144.2":
+"@tamagui/linear-gradient@npm:1.144.2, @tamagui/linear-gradient@npm:^1.144.2":
   version: 1.144.2
   resolution: "@tamagui/linear-gradient@npm:1.144.2"
   dependencies:
@@ -8513,6 +8513,17 @@ __metadata:
     expo: "*"
     react: "*"
   checksum: 10/574f3932356a23b3ee5f415115f95884d146cfd8d62bc19cdca463639c2d0941df01f7b82b489df8bdcd40e77fb088bcdd1724b001b157e25e2f97311f2c9ad1
+  languageName: node
+  linkType: hard
+
+"expo-linear-gradient@npm:~15.0.8":
+  version: 15.0.8
+  resolution: "expo-linear-gradient@npm:15.0.8"
+  peerDependencies:
+    expo: "*"
+    react: "*"
+    react-native: "*"
+  checksum: 10/41f2357309bb02720c70c1525a97c325273e0622c91deee15163bb71c45b8d853429f230df5f200d7234ebb76a8a648c3c75db3011de4698573c00fe3e3b6950
   languageName: node
   linkType: hard
 
@@ -12370,6 +12381,7 @@ __metadata:
     "@tamagui/babel-plugin": "npm:^1.144.2"
     "@tamagui/cli": "npm:^1.144.2"
     "@tamagui/config": "npm:^1.144.2"
+    "@tamagui/linear-gradient": "npm:^1.144.2"
     "@tamagui/lucide-icons": "npm:^1.144.2"
     "@tamagui/metro-plugin": "npm:^1.144.2"
     "@tamagui/toast": "npm:^1.144.2"
@@ -12380,6 +12392,7 @@ __metadata:
     expo: "npm:^54.0.23"
     expo-build-properties: "npm:~1.0.9"
     expo-font: "npm:~14.0.9"
+    expo-linear-gradient: "npm:~15.0.8"
     expo-linking: "npm:~8.0.8"
     expo-router: "npm:~6.0.14"
     expo-splash-screen: "npm:~31.0.10"
